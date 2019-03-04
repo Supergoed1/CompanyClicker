@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Clicker Game</title>
+</head>
+<body>
+    <button onclick="saveData()" class="saveButton">Save</button>
+    <button onclick="loadData()" class="loadButton">Load</button>
+    <button onclick="resetData()" class="resetButton">Reset</button>
+
+    <div id="time" class="time">00:00</div>
+    <div id="day" class="day">day 1</div>
+
+    <button onclick="buttonclick()" id="clickButton" class="clickButton">Work        +1 money</button>
+    <div id="clicks" class="moneyAmount">Money: 0</div>
+
+    <button onclick="increaseClicks()" id="increaseClicksButton" style="visibility: hidden;">Get a raise</button>
+    <div id="upgradeCost" style="visibility: hidden;">Cost: 0</div>
+
+    <button onclick="buyWorker()" id="buyWorkerButton" style="visibility: hidden;">Buy worker</button>
+    <div id="workerAmount" style="visibility: hidden;">Workers: 0/10</div>
+
+    <button onclick="upgradeWorkerCap()" id="workerCapButton" style="visibility: hidden;">Upgrade Company Building</button>
+    <div id="upgradeWorkerCapCost" style="visibility: hidden;">Cost: 500</div>
+
+</body>
+<script src="main.js"></script>
+</html>
