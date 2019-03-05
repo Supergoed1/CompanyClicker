@@ -1,5 +1,5 @@
 .clickButton {
-    position: fixed;
+    position: absolute;
     left: 668;
     bottom: 400;
     width: 100;
@@ -7,7 +7,7 @@
 }
 
 .moneyAmount {
-    position: fixed;
+    position: absolute;
     left: 668;
     bottom: 375;
     width: 100;
@@ -15,25 +15,25 @@
 }
 
 .saveButton {
-    position: fixed;
+    position: absolute;
     left: 10;
     bottom: 10;
 }
 
 .loadButton {
-    position: fixed;
+    position: absolute;
     left: 60;
     bottom: 10;
 }
 
 .resetButton {
-    position: fixed;
+    position: absolute;
     left: 1475;
     bottom: 10;
 }
 
 .time {
-    position: fixed;
+    position: absolute;
     left: 685;
     bottom: 690;
     font-size: 32;
@@ -41,7 +41,7 @@
 }
 
 .day {
-    position: fixed;
+    position: absolute;
     left: 690;
     bottom: 680;
     font-size: 29;
