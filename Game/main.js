@@ -91,3 +91,7 @@ function updateGUI() {
     document.getElementById("workerAmount").textContent = "Workers: " + workers + "/" + workerCap;
     document.getElementById("upgradeWorkerCapCost").textContent = "Cost: " + upgradeWorkerCapCost;
 }
+
+window.onbeforeunload = function() {
+    saveData();
+};
