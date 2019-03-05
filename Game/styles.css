@@ -31,19 +31,3 @@
     left: 1475;
     bottom: 10;
 }
-
-.time {
-    position: absolute;
-    left: 685;
-    bottom: 690;
-    font-size: 32;
-    font:bold 25px Arial;
-}
-
-.day {
-    position: absolute;
-    left: 690;
-    bottom: 680;
-    font-size: 29;
-    font:bold 16px Arial;
-}

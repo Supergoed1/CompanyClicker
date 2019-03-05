@@ -4,8 +4,6 @@ var upgradeClicksCost = 50;
 var upgradeWorkerCapCost = 500;
 var workers = 0;
 var workerCap = 10;
-var hours = 6;
-var days = 1;
 var perSecordInterval = setInterval("perSecond()", 1000);
 var updateGUIInterval = setInterval("updateGUI()", 10);
 var saveInterval = setInterval("saveData()", 30 * 1000);
@@ -19,8 +17,6 @@ function saveData() {
     localStorage.setItem("upgradeWorkerCapCostdata", upgradeWorkerCapCost);
     localStorage.setItem("workersdata", workers);
     localStorage.setItem("workerCapdata", workerCap);
-    localStorage.setItem("hoursdata", hours);
-    localStorage.setItem("daysdata", days);
 }
 
 function loadData() {
@@ -31,8 +27,6 @@ function loadData() {
     upgradeWorkerCapCost = Number(localStorage.getItem("upgradeWorkerCapCostdata"));
     workers = Number(localStorage.getItem("workersdata"));
     workerCap = Number(localStorage.getItem("workerCapdata"));
-    hours = Number(localStorage.getItem("hoursdata"));
-    days = Number(localStorage.getItem("daysdata"));
 }
 
 function resetData() {
@@ -44,13 +38,10 @@ function resetData() {
     upgradeWorkerCapCost = 500;
     workers = 0;
     workerCap = 10;
-    hours = 6;
-    days = 1;
 }
 
 function buttonclick() {
     money += moneyPerClick;
-    hours += 1;
 }
 function increaseClicks() {
     if(money >= upgradeClicksCost) {
@@ -103,6 +94,4 @@ function updateGUI() {
     document.getElementById("clickButton").textContent = "Work +" + moneyPerClick + " Money";
     document.getElementById("workerAmount").textContent = "Workers: " + workers + "/" + workerCap;
     document.getElementById("upgradeWorkerCapCost").textContent = "Cost: " + upgradeWorkerCapCost;
-    document.getElementById("time").textContent = hours + ":00";
-    document.getElementById("day").textContent = "day " + days;
 }
