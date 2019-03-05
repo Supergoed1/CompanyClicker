@@ -84,10 +84,6 @@ function updateGUI() {
         document.getElementById("increaseClicksButton").style.visibility = "visible"
         document.getElementById("upgradeCost").style.visibility = "visible"
     }
-    if(hours >= 25) {
-        hours = 0;
-        days += 1;
-    }
 
     document.getElementById("clicks").textContent = "Money: " + money;
     document.getElementById("upgradeCost").textContent = "Cost: " + upgradeClicksCost;
