@@ -1,7 +1,6 @@
 .clickButton {
     position: absolute;
-    left: 668;
-    bottom: 400;
+    padding: 10px;
     width: 100;
     height: 50;
 }
