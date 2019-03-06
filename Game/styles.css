@@ -21,10 +21,6 @@
 .clickButton:hover {
 	background-color:#768d87;
 }
-.clickButton:active {
-	position:relative;
-	top:1px;
-}
 	
 
 .moneyAmount {
