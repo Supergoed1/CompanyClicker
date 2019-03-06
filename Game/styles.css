@@ -13,7 +13,14 @@
 	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
 	background-color:#768d87;
-    color:#ffffff;
+    cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
