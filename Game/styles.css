@@ -15,7 +15,8 @@
 	background-color:#768d87;
     cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
+	font-family:Arial
+Verdana;
 	font-size:15px;
 	font-weight:bold;
 	padding:11px 23px;
@@ -26,6 +27,7 @@
 	border-radius:5px;
 	border:1px solid #566963;
 	display:inline-block;
+	
 }
 
 .moneyAmount {
