@@ -1,3 +1,4 @@
 # ClickerGame
-First Javascript/html/github game /n
+First Javascript/html/github game  
+ 
 So yea
