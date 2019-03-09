@@ -1,5 +1,3 @@
 # ClickerGame
-I... i dont know why either
-leave me alone
-pls
-go away
+First Javascript/html/github game /n
+So yea
