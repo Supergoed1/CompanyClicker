@@ -27,6 +27,17 @@ function loadData() {
     upgradeWorkerCapCost = Number(localStorage.getItem("upgradeWorkerCapCostdata"));
     workers = Number(localStorage.getItem("workersdata"));
     workerCap = Number(localStorage.getItem("workerCapdata"));
+    if(money >= 50) {
+        document.getElementById("buyWorkerButton").style.visibility = "visible"
+        document.getElementById("workerAmount").style.visibility = "visible"
+        document.getElementById("workerCapButton").style.visibility = "visible"
+        document.getElementById("upgradeWorkerCapCost").style.visibility = "visible"
+    }
+    if(money >= 50) {
+        document.getElementById("increaseClicksButton").style.visibility = "visible"
+        document.getElementById("upgradeCost").style.visibility = "visible"
+    }
+
 }
 
 function resetData() {
