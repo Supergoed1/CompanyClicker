@@ -1,10 +1,10 @@
 var game = {
-    money = 0,
-    moneyPerClick = 1,
-    upgradeClicksCost = 50,
-    upgradeWorkerCapCost = 500,
-    workers = 0,
-    workerCap = 10
+    money: 0,
+    moneyPerClick: 1,
+    upgradeClicksCost: 50,
+    upgradeWorkerCapCost: 500,
+    workers: 0,
+    workerCap: 10
 };
 
 var perSecordInterval = setInterval("perSecond()", 1000);
@@ -18,7 +18,11 @@ function saveData() {
 }
 
 function loadData() {
-    if(Number(localStorage.getItem("gamedata")) == null) saveData();
+    if(Number(localStorage.getItem("moneydata")) >= 1) {
+        alert("Your data is outdated! You need to reset");
+        resetData();
+    }
+    if(Object(localStorage.getItem("gamedata")) == null) saveData();
     game = localStorage.getItem("gamedata");
     if(money >= 50) {
         document.getElementById("buyWorkerButton").style.visibility = "visible"
