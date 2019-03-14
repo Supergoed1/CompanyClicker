@@ -1,9 +1,12 @@
-var money = 0;
-var moneyPerClick = 1;
-var upgradeClicksCost = 50;
-var upgradeWorkerCapCost = 500;
-var workers = 0;
-var workerCap = 10;
+var game = {
+    money = 0,
+    moneyPerClick = 1,
+    upgradeClicksCost = 50,
+    upgradeWorkerCapCost = 500,
+    workers = 0,
+    workerCap = 10
+};
+
 var perSecordInterval = setInterval("perSecond()", 1000);
 var updateGUIInterval = setInterval("updateGUI()", 10);
 var saveInterval = setInterval("saveData()", 30 * 1000);
@@ -11,22 +14,12 @@ var saveInterval = setInterval("saveData()", 30 * 1000);
 loadData();
 
 function saveData() {
-    localStorage.setItem("moneydata", money);
-    localStorage.setItem("moneyPerClickdata", moneyPerClick);
-    localStorage.setItem("upgradeClicksCostdata", upgradeClicksCost);
-    localStorage.setItem("upgradeWorkerCapCostdata", upgradeWorkerCapCost);
-    localStorage.setItem("workersdata", workers);
-    localStorage.setItem("workerCapdata", workerCap);
+    localStorage.setItem("gamedata", game);
 }
 
 function loadData() {
-    if(Number(localStorage.getItem("moneydata")) == 0) saveData();
-    money = Number(localStorage.getItem("moneydata"));
-    moneyPerClick = Number(localStorage.getItem("moneyPerClickdata"));
-    upgradeClicksCost = Number(localStorage.getItem("upgradeClicksCostdata"));
-    upgradeWorkerCapCost = Number(localStorage.getItem("upgradeWorkerCapCostdata"));
-    workers = Number(localStorage.getItem("workersdata"));
-    workerCap = Number(localStorage.getItem("workerCapdata"));
+    if(Number(localStorage.getItem("gamedata")) == null) saveData();
+    game = localStorage.getItem("gamedata");
     if(money >= 50) {
         document.getElementById("buyWorkerButton").style.visibility = "visible"
         document.getElementById("workerAmount").style.visibility = "visible"
@@ -43,64 +36,64 @@ function loadData() {
 function resetData() {
     if(confirm("Are you sure you want to reset?") == false) return;
     localStorage.clear();
-    money = 0;
-    moneyPerClick = 1;
-    upgradeClicksCost = 50;
-    upgradeWorkerCapCost = 500;
-    workers = 0;
-    workerCap = 10;
+    game.money = 0;
+    game.moneyPerClick = 1;
+    game.upgradeClicksCost = 50;
+    game.upgradeWorkerCapCost = 500;
+    game.workers = 0;
+    game.workerCap = 10;
 }
 
 function buttonclick() {
-    money += moneyPerClick;
+    game.money += game.moneyPerClick;
 }
 function increaseClicks() {
-    if(money >= upgradeClicksCost) {
-        moneyPerClick += 1;
-        money -= upgradeClicksCost;
-        upgradeClicksCost *= 1.25;
-        upgradeClicksCost = Math.round(upgradeClicksCost);
+    if(game.money >= game.upgradeClicksCost) {
+        game.moneyPerClick += 1;
+        game.money -= game.upgradeClicksCost;
+        game.upgradeClicksCost *= 1.25;
+        game.upgradeClicksCost = Math.round(game.upgradeClicksCost);
     }
 }
 
 function upgradeWorkerCap() {
-    if(money >= upgradeWorkerCapCost) {
-        money -= upgradeWorkerCapCost;
-        workerCap += 10;
-        upgradeWorkerCapCost *= 1.30;
-        upgradeWorkerCapCost = Math.round(upgradeWorkerCapCost);
+    if(game.money >= game.upgradeWorkerCapCost) {
+        game.money -= upgradeWorkerCapCost;
+        game.workerCap += 10;
+        game.upgradeWorkerCapCost *= 1.30;
+        game.upgradeWorkerCapCost = Math.round(upgradeWorkerCapCost);
     }
 }
 
 function buyWorker() {
-    if(money >= 200) {
-        if(workers >= workerCap) return;
+    if(game.money >= 200) {
+        if(game.workers >= game.workerCap) return;
         document.getElementById("workerAmount").style.visibility = "visible"
         document.getElementById("workerCapButton").style.visibility = "visible"
         document.getElementById("upgradeWorkerCapCost").style.visibility = "visible"
-        workers += 1;
-        money -= 200;
+        game.workers += 1;
+        game.money -= 200;
     }
 }
 
 function perSecond() {
-    money += workers;
+    game.money += game.workers;
 }
 
 function updateGUI() {
-    if(money >= 200) {
+    if(game.money >= 200) {
         document.getElementById("buyWorkerButton").style.visibility = "visible"
     }
-    if(money >= upgradeClicksCost) {
+    if(game.money >= game.upgradeClicksCost) {
         document.getElementById("increaseClicksButton").style.visibility = "visible"
         document.getElementById("upgradeCost").style.visibility = "visible"
     }
 
-    document.getElementById("clicks").textContent = "Money: " + money;
-    document.getElementById("upgradeCost").textContent = "Cost: " + upgradeClicksCost;
-    document.getElementById("clickButton").textContent = "Work +" + moneyPerClick + " Money";
-    document.getElementById("workerAmount").textContent = "Workers: " + workers + "/" + workerCap;
-    document.getElementById("upgradeWorkerCapCost").textContent = "Cost: " + upgradeWorkerCapCost;
+    document.getElementById("clicks").textContent = "Money: " + game.money;
+    document.getElementById("upgradeCost").textContent = "Cost: " + game.upgradeClicksCost;
+    document.getElementById("clickButton").textContent = "Work +" + game.moneyPerClick + " Money";
+    document.getElementById("workerAmount").textContent = "Workers: " + game.workers + "/" + game.workerCap;
+    document.getElementById("upgradeWorkerCapCost").textContent = "Cost: " + game.upgradeWorkerCapCost;
 }
 
 window.onbeforeunload = function() {
