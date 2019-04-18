@@ -1,0 +1,10 @@
+#website {
+    position: fixed;
+    left: 69%;
+    bottom: 5%;
+    width: 30%;
+    height: 90%;
+    border: 4px solid black;
+    background-color: rgb(250, 248, 248);
+    text-align: center;
+}

@@ -1,4 +1,2 @@
-# ClickerGame
-First Javascript/html/github game  
- 
-So yea
+# Website Clicker
+
