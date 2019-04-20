@@ -10,10 +10,17 @@
     <div id="content">
         <div id="website">
             <h1 id="websiteTitle">Title</h1>
-            <a href="IdleRpg.png" id="ad1">
-                <img src="IdleRpg.png" >
-            </a>
+            <div id="ad1content" style="display:none;">
+                <img src="IdleRpg.png" alt="IdleRpg" id="ad1">
+                <button style="position:fixed; left: 70.1%;
+                bottom: 50.5%;
+                width: 10.5%;
+                height: 15.5%; opacity: 0; cursor:pointer;" onclick="window.open('https://supergoed1.github.io/IdleRpg/')"></button>
+            </div>
+            
         </div>
+        <button id="beg" onclick="beg()">beg</button>
+        <div id="money">Money: 0</div>
     </div>
 </body>
 <script src="main.js"></script>
