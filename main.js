@@ -12,9 +12,10 @@ var game = {
 };
 var ad1c = document.getElementById("ad1content");
 var begButton = document.getElementById("beg");
+var cash = new Decimal(money);
 
 function beg() {
-    game.money += game.moneyPerClick;
+    cash.plus(game.moneyPerClick);
     updateGUI();
 }
 
@@ -57,6 +58,7 @@ function currencyFormat(num) {
   }
 
 window.onbeforeunload = function (){
+    game.money = cash;
     save();
 };
 init();
