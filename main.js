@@ -10,12 +10,12 @@ var game = {
     money: 0,
     moneyPerClick: 0.01
 };
+var updateGUIint = setInterval("updateGUI()", 100);
 var ad1c = document.getElementById("ad1content");
 var begButton = document.getElementById("beg");
-var cash = new Decimal(money);
 
 function beg() {
-    cash.plus(game.moneyPerClick);
+    game.money += game.moneyPerClick;
     updateGUI();
 }
 
@@ -58,7 +58,6 @@ function currencyFormat(num) {
   }
 
 window.onbeforeunload = function (){
-    game.money = cash;
     save();
 };
 init();
